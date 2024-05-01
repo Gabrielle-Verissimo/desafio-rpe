@@ -1,18 +1,16 @@
 package com.rpe.desafiorpe.models;
 
 import jakarta.persistence.*;
-import java.util.UUID;
 
 @Entity
-//@Table(name = "cliente")
 @DiscriminatorValue("cliente")
-public class PessoaClienteModel extends PessoaModel{
+public class ClientModel extends PersonModel {
     private String dataDoUltimoServico;
 
-    public PessoaClienteModel() {
+    public ClientModel() {
     }
 
-    public PessoaClienteModel(String cpf, String nome, String endereco, String telefone, String dataDoUltimoServico) {
+    public ClientModel(String cpf, String nome, String endereco, String telefone, String dataDoUltimoServico) {
         super(cpf, nome, endereco, telefone);
         this.dataDoUltimoServico = dataDoUltimoServico;
     }

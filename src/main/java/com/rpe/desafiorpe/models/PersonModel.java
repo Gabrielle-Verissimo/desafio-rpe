@@ -1,13 +1,14 @@
 package com.rpe.desafiorpe.models;
 
 import jakarta.persistence.*;
+
 import java.util.UUID;
 
 @Entity
 @Table(name = "PESSOA")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo_pessoa", discriminatorType = DiscriminatorType.STRING)
-public abstract class PessoaModel {
+public abstract class PersonModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
@@ -17,10 +18,10 @@ public abstract class PessoaModel {
     private String endereco;
     private String telefone;
 
-    public PessoaModel() {
+    public PersonModel() {
     }
 
-    public PessoaModel(String cpf, String nome, String endereco, String telefone) {
+    public PersonModel(String cpf, String nome, String endereco, String telefone) {
         this.cpf = cpf;
         this.nome = nome;
         this.endereco = endereco;

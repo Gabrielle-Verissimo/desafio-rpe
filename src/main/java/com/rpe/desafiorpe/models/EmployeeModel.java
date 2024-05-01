@@ -3,18 +3,17 @@ package com.rpe.desafiorpe.models;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
-import java.util.UUID;
 @Entity
 @DiscriminatorValue("funcionario")
-public class PessoaFuncionarioModel extends PessoaModel{
+public class EmployeeModel extends PersonModel {
     private String funcao;
     private String status;
     private String dataDeContratacao;
 
-    public PessoaFuncionarioModel() {
+    public EmployeeModel() {
     }
 
-    public PessoaFuncionarioModel(String cpf, String nome, String endereco, String telefone, String funcao, String status, String dataDeContratacao) {
+    public EmployeeModel(String cpf, String nome, String endereco, String telefone, String funcao, String status, String dataDeContratacao) {
         super(cpf, nome, endereco, telefone);
         this.funcao = funcao;
         this.status = status;
